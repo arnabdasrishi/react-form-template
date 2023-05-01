@@ -36,3 +36,9 @@
     transform: rotate(360deg);
   }
 }
+
+/* Form CSS begins here */
+
+.personal__details__one {
+  display: flex;
+}
