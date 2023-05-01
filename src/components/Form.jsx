@@ -9,7 +9,9 @@ const Form = () => {
     <form>
       {/* Personal Details Section */}
       <div className="personal__details">
-        <p>Personal Details</p>
+        <p>
+          <u>Personal Details</u>
+        </p>
         <div className="personal__details__one">
           <div>
             <label htmlFor="name">Name : </label>
@@ -47,7 +49,9 @@ const Form = () => {
 
       {/* Contact Details section hereby */}
       <div className="contact__details">
-        <p>Contact Details</p>
+        <p>
+          <u>Contact Details</u>
+        </p>
         <div className="contact__details__one">
           <div>
             <label htmlFor="gurd-details">Gurdian Details : </label>
@@ -100,7 +104,9 @@ const Form = () => {
 
       {/* Other Details */}
       <div className="other_details">
-        <p>Other Details</p>
+        <p>
+          <u>Other Details</u>
+        </p>
         <div className="other__details__one">
           <div>
             <label htmlFor="occupation">Occupation : </label>
@@ -141,8 +147,12 @@ const Form = () => {
       </div>
 
       <div className="form__buttons">
-        <button>Cancel <br/> <span style={{fontSize:"0.8rem"}}>(ESC)</span></button>
-        <button>Submit <br/> <span style={{fontSize:"0.8rem"}}>(⌘ S)</span></button>
+        <button>
+          Cancel <br /> <span style={{ fontSize: "0.8rem" }}>(ESC)</span>
+        </button>
+        <button>
+          Submit <br /> <span style={{ fontSize: "0.8rem" }}>(⌘ S)</span>
+        </button>
       </div>
     </form>
   );
