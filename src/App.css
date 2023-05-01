@@ -38,7 +38,151 @@
 }
 
 /* Form CSS begins here */
+form {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: rgb(243, 243, 243);
+  width: 65%;
+  padding: 1rem;
+  margin: auto;
+}
+form input {
+  background-color: rgb(243, 243, 243);
+  border: 1px solid grey;
+  padding: .2rem;
+  border-radius: 4px;
+}
+form select {
+  background-color: rgb(243, 243, 243);
+  border: 1px solid grey;
+  padding: .2rem;
+  border-radius: 4px;
+}
+
+form > div > p {
+  text-align: left;
+  font-weight: bold;
+}
 
 .personal__details__one {
   display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: left;
+} 
+
+.personal__details__two {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: left;
+  margin-top: 1rem;
+}
+
+.contact__details__one {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: left;
+}
+
+.address__details__one {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: left;
+  margin-top: 1rem;
+}
+.address__details__two {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: left;
+  margin-top: 1rem;
+}
+
+.other__details__one {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  justify-content: left;
+}
+.nationality {
+  text-align: left;
+  margin-top: 1rem;
+}
+
+
+@media screen and (max-width: 950px) {
+  form {
+    display: flex;
+    flex-direction: column;
+    width: 70%;
+    margin: 0 auto;
+  }
+
+  p {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 1rem;
+  }
+
+  label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+  }
+
+  input,
+  select {
+    width: 100%;
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  select {
+    cursor: pointer;
+  }
+
+  button {
+    padding: 0.5rem;
+    margin-right: 1rem;
+    border-radius: 5px;
+    border: none;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+
+  button:first-child {
+    background-color: rgb(243, 243, 243);
+  }
+
+  button:last-child {
+    background-color: #007bff;
+  }
+}
+
+/* Form button styling */
+.form__buttons {
+  margin-top: 3rem;
+  text-align: end;
+}
+.form__buttons > button:first-child {
+  border: 1px solid red;
+  color: red;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: .4rem 1.5rem;
+  margin-right: 3rem;
+}
+.form__buttons > button:last-child{
+  border: 1px solid green;
+  color: white;
+  background-color: green;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  padding: .4rem 1.5rem;
 }
