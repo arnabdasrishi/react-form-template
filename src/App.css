@@ -116,6 +116,7 @@ form > div > p {
   form {
     max-width: 600px;
     margin: 0 auto;
+    font-size: 1.2rem;
   }
 
   form div {
@@ -138,6 +139,16 @@ form > div > p {
     padding: 0.5rem;
     border-radius: 5px;
     border: 1px solid #ccc;
+  }
+}
+@media screen and (max-width: 420px) {
+  .form__buttons{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .form__buttons > button {
+    width: 100%;
   }
 }
 
