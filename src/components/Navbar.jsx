@@ -11,7 +11,7 @@ const Navbar = () => {
           <p>Home</p>
         </NavLink>
         <NavLink to="/datalist">
-          <p>DataList</p>
+          <p>DataLists</p>
         </NavLink>
       </div>
     </div>
