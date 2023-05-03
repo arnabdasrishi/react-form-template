@@ -1,11 +1,14 @@
 import React from "react";
 import "../App.css";
+import { fireDb } from "../Firebase/Firebase";
 
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { validSchema } from "../Form Validator/Validation";
+import { set,ref } from "firebase/database";
+import { uid } from "uid";
 
 const Form = () => {
   const schema = yup.object().shape(validSchema);
@@ -19,12 +22,16 @@ const Form = () => {
   });
 
   const setUser = (data) => {
+    const uuid = uid();
+    set(ref(fireDb, `/${uuid}`), {
+      data,
+      uuid
+    })
     console.log(data);
   };
 
   return (
     <form onSubmit={handleSubmit(setUser)}>
-      {errors ? <p>Error</p> : ""}
       {/* Personal Details Section */}
       <div className="personal__details">
         <p>
@@ -59,9 +66,9 @@ const Form = () => {
             </label>
             <select name="sex" id="sex" {...register("sex")}>
               <option value="">Enter Sex</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="others">Others</option>
+              <option value="Male">Male</option>
+              <option value="Female">Female</option>
+              <option value="Others">Others</option>
             </select>
             <p style={{ fontSize: "0.8rem", margin: ".2rem" }}>
               <i>{errors.sex?.message}</i>
@@ -82,8 +89,8 @@ const Form = () => {
             <label htmlFor="name">Govt Issued ID : </label>
             <select name="id-type" id="id__type" {...register("id_type")}>
               <option value="">ID Type</option>
-              <option value="pan">PAN</option>
-              <option value="aadhar">AADHAR</option>
+              <option value="Pan">PAN</option>
+              <option value="Aadhar">AADHAR</option>
             </select>
             <input
               type="text"
@@ -108,9 +115,9 @@ const Form = () => {
               {...register("guardian_type")}
             >
               <option value="">Enter Label</option>
-              <option value="father">Father</option>
-              <option value="mother">Mother</option>
-              <option value="parent">Parent</option>
+              <option value="Father">Father</option>
+              <option value="Mother">Mother</option>
+              <option value="Parent">Parent</option>
             </select>
           </div>
           <div>
@@ -221,23 +228,25 @@ const Form = () => {
               {...register("marital_status")}
             >
               <option value="">Martial Status</option>
-              <option value="married">Married</option>
-              <option value="divorced">Divorced</option>
-              <option value="seperated">Seperated</option>
-              <option value="widowed">Widowed</option>
-              <option value="single">Single</option>
+              <option value="Married">Married</option>
+              <option value="Divorced">Divorced</option>
+              <option value="Seperated">Seperated</option>
+              <option value="Widowed">Widowed</option>
+              <option value="Single">Single</option>
             </select>
           </div>
           <div>
             <label htmlFor="blood">Blood Group : </label>
             <select name="Group" id="blood__group" {...register("blood_group")}>
               <option value="">Group</option>
-              <option value="a+">A+</option>
-              <option value="a-">A-</option>
-              <option value="b+">B+</option>
-              <option value="b-">B-</option>
-              <option value="ab+">AB+</option>
-              <option value="ab-">AB-</option>
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
             </select>
           </div>
         </div>
