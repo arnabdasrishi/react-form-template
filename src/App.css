@@ -142,7 +142,7 @@ form > div > p {
   }
 }
 @media screen and (max-width: 420px) {
-  .form__buttons{
+  .form__buttons {
     display: flex;
     align-items: center;
     gap: 1rem;
@@ -178,8 +178,42 @@ form > div > p {
   border-radius: 5px;
   padding: 0.4rem 1.5rem;
 }
-.form__buttons > button:last-child:hover{
+.form__buttons > button:last-child:hover {
   border: 1px solid green;
   color: green;
   background-color: rgb(243, 243, 243);
+}
+
+/* Data List component CSS begins here */
+.data__list__header {
+  text-align: center;
+  font-size: 2rem;
+  color: #7c6a00;
+}
+table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 800px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #fdd808;
+}
+
+tr:nth-child(odd) {
+  background-color: #f7fae5; /* Set the background color of even rows */
+}
+
+tr:hover {
+  background-color: #daf7d1;
+}
+
+.table-container {
+  overflow-x: auto;
 }

@@ -2,6 +2,8 @@ import { onValue, ref } from "firebase/database";
 import { useEffect, useState } from "react";
 import { fireDb } from "../Firebase/Firebase";
 
+import "../App.css";
+
 const DataList = () => {
   const [usersData, setUsersData] = useState([]);
 
@@ -25,7 +27,7 @@ const DataList = () => {
 
   return (
     <div>
-      <h3>Data List</h3>
+      <h3 className="data__list__header">Data List</h3>
 
       {/* table data hereby */}
 
