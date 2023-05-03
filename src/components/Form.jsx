@@ -1,4 +1,4 @@
-import React from "react";
+import { useState } from "react";
 import "../App.css";
 import { fireDb } from "../Firebase/Firebase";
 
@@ -7,16 +7,18 @@ import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
 
 import { validSchema } from "../Form Validator/Validation";
-import { set,ref } from "firebase/database";
+import { set, ref } from "firebase/database";
 import { uid } from "uid";
 
 const Form = () => {
+  const [submitted, setSubmitted] = useState(false);
   const schema = yup.object().shape(validSchema);
 
   const {
     register,
     handleSubmit,
     formState: { errors },
+    reset,
   } = useForm({
     resolver: yupResolver(schema),
   });
@@ -25,9 +27,18 @@ const Form = () => {
     const uuid = uid();
     set(ref(fireDb, `/${uuid}`), {
       data,
-      uuid
+      uuid,
     })
-    console.log(data);
+      .then(() => {
+        alert("Your Data has been registered");
+        setSubmitted(true);
+      })
+      .catch((error) => {
+        console.error("Error writing document: ", error);
+      });
+
+    // Resetting the form
+    reset();
   };
 
   return (
