@@ -1,14 +1,8 @@
 import "./App.css";
-import DataList from "./components/DataList";
-import Form from "./components/Form";
+import AllRoutes from "./Routes/AllRoutes";
 
 function App() {
-  return (
-    <div className="App">
-      <Form />
-      <DataList />
-    </div>
-  );
+  return <AllRoutes />;
 }
 
 export default App;
