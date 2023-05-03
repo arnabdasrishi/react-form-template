@@ -95,6 +95,9 @@ const Form = () => {
               placeholder="Enter Mobile"
               {...register("mobile")}
             />
+            <p style={{ fontSize: "0.8rem", margin: ".2rem" }}>
+              <i>{errors.mobile?.message}</i>
+            </p>
           </div>
           <div>
             <label htmlFor="name">Govt Issued ID : </label>
@@ -108,6 +111,9 @@ const Form = () => {
               placeholder="Enter Govt ID"
               {...register("id_number")}
             />
+            <p style={{ fontSize: "0.8rem", margin: ".2rem" }}>
+              <i>{errors.id_number?.message}</i>
+            </p>
           </div>
         </div>
       </div>
@@ -153,6 +159,9 @@ const Form = () => {
               placeholder="Enter Emergency No"
               {...register("emergency_contact")}
             />
+            <p style={{ fontSize: "0.8rem", margin: ".2rem" }}>
+              <i>{errors.emergency_contact?.message}</i>
+            </p>
           </div>
         </div>
       </div>
